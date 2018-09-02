@@ -9,6 +9,7 @@ Page({
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         count: 0,
+        themeImg: '/images/mm_lm.png'
     },
     //事件处理函数
     bindViewTap: function() {

@@ -1,9 +1,14 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <button wx:if="{{!hasUserInfo && canIUse}}"
+            open-type="getUserInfo"
+            bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <image bindtap="bindViewTap"
+             class="userinfo-avatar"
+             src="{{userInfo.avatarUrl}}"
+             mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
@@ -14,5 +19,11 @@
     <text bindtap="handleCountClick">
       这是我的第一个小程序, 点击了{{count}}次.
     </text>
+  </view>
+  <view>
+    <image class="userinfo-avatar"
+           src="{{themeImg}}"
+           mode="aspectFill"
+           bindtap="handleCountClick"></image>
   </view>
 </view>
