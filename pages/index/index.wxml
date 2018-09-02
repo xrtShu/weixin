@@ -10,4 +10,9 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+  <view class="user-explain">
+    <text bindtap="handleCountClick">
+      这是我的第一个小程序, 点击了{{count}}次.
+    </text>
+  </view>
 </view>
