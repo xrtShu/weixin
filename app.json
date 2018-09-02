@@ -8,5 +8,26 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/icon/mm.png",
+      "selectedIconPath": "images/icon/mm_select.png"
+    }, {
+      "pagePath": "pages/logs/logs",
+      "text": "日志",
+      "iconPath": "images/icon/mmx.png",
+      "selectedIconPath": "images/icon/mmx_select.png"
+    }],
+    "color": "#fff",
+    "selectedColor": "#6ff",
+    "backgroundColor": "#f99",
+    "borderStyle": "#fff"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
   }
 }
