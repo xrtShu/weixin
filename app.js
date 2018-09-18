@@ -35,5 +35,20 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+  onLaunch: function(options) {
+    // Do something initial when launch.
+  },
+  onShow: function(options) {
+    // Do something when show.
+  },
+  onHide: function() {
+    // Do something when hide.
+  },
+  onError: function(msg) {
+    console.log(msg)
+  },
+  onPageNotFound: function() {
+    // 页面不存在的监听函数
   }
 })

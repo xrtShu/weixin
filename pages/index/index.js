@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
-const app = getApp()
+const app = getApp();
+const { sayHello, sayGoodbye } = require('../../utils/common');
 
 Page({
     data: {
@@ -57,5 +58,11 @@ Page({
             userInfo: e.detail.userInfo,
             hasUserInfo: true
         })
+    },
+    onShow: function () {
+        // 获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。
+        console.log(getCurrentPages()[0], 'getCurrentPages');
+        sayHello('Hygge');
+        sayGoodbye('Hygge');
     }
 })
