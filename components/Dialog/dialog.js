@@ -1,6 +1,7 @@
 Component({
     options: {
-        multipleSlots: true // 在组件定义时的选项中启用多slot支持
+        multipleSlots: true, // 允许组件中使用多个slot
+        // addGlobalClass: true, // 允许组件外部样式类影响组件内部
     },
     /**
      * 组件的属性列表
@@ -57,7 +58,13 @@ Component({
             this.triggerEvent("cancelEvent");
         },
         _confirmEvent(){
-            this.triggerEvent("confirmEvent");
+            let eventDetail = {a:1, b: 2}; // 提供给事件监听函数
+            let eventOption = {
+                bubbles: false, // 事件是否冒泡
+                composed: false, // 是否穿越组件边界
+                capturePhase: false // 事件是否拥有捕获阶段
+            }; // 触发事件的选项
+            this.triggerEvent("confirmEvent", eventDetail, eventOption); // 事件名、detail对象和事件选项
         }
     }
 });

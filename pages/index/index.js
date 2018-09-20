@@ -87,8 +87,8 @@ Page({
         console.log('你点击了取消');
         this.dialog.hideDialog();
     },
-    _confirmEvent(){
-        console.log('你点击了确定');
+    _confirmEvent(e){
+        console.log('你点击了确定', e);
         this.dialog.hideDialog();
     }
 });
