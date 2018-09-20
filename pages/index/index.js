@@ -10,15 +10,21 @@ Page({
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo'),
         count: 0,
-        themeImg: '/images/mm_lm.png'
+        themeImg: '/images/mm_lm.png',
+        dialog: {
+            id: 'dialog',
+            title: 'hello',
+            content: '恭喜你，学会了小程序组件',
+            confirmText: '谢谢您',
+        }
     },
     //事件处理函数
-    bindViewTap: function() {
+    bindViewTap: function () {
         wx.navigateTo({
             url: '../logs/logs'
         })
     },
-    handleCountClick: function() {
+    handleCountClick: function () {
         this.setData({
             count: ++this.data.count,
         })
@@ -51,7 +57,7 @@ Page({
             })
         }
     },
-    getUserInfo: function(e) {
+    getUserInfo: function (e) {
         console.log(e)
         app.globalData.userInfo = e.detail.userInfo
         this.setData({
@@ -60,9 +66,29 @@ Page({
         })
     },
     onShow: function () {
-        // 获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。
+        // 获取当前页面栈的实例，以数组形式按栈的顺序给出，
+        // 第一个元素为首页，最后一个元素为当前页面。
         console.log(getCurrentPages()[0], 'getCurrentPages');
         sayHello('Hygge');
         sayGoodbye('Hygge');
+    },
+    /**
+     * 生命周期函数--监听页面初次渲染完成, dialog 相关方法
+     */
+    onReady: function () {
+        // 获得dialog组件
+        this.dialog = this.selectComponent("#dialog");
+        console.log(this.dialog, 'dd');
+    },
+    showDialog(){
+        this.dialog.showDialog();
+    },
+    _cancelEvent(){
+        console.log('你点击了取消');
+        this.dialog.hideDialog();
+    },
+    _confirmEvent(){
+        console.log('你点击了确定');
+        this.dialog.hideDialog();
     }
-})
+});

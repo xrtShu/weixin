@@ -26,4 +26,16 @@
            mode="aspectFill"
            bindtap="handleCountClick"></image>
   </view>
+
+  <view class="container">
+    <dialog id="{{dialog.id}}"
+            title="{{dialog.title}}"
+            content="{{dialog.content}}"
+            confirmText="{{dialog.confirmText}}"
+            bind:cancelEvent="_cancelEvent"
+            bind:confirmEvent="_confirmEvent">
+    </dialog>
+
+    <button type="small" bindtap="showDialog"> ClickMe! </button>
+  </view>
 </view>
